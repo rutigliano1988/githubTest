@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Clima</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+<header class="header">
+  <div class="header-row">
+    <div>
+      <h1>🌤️ Clima</h1>
+      <p>Busca una ciudad o usa tu ubicación.</p>
+    </div>
+
+    <button id="themeBtn" class="secondary" type="button" aria-label="Cambiar tema">
+      🌙
+    </button>
+  </div>
+</header>
+
+    <section class="controls">
+      <form id="searchForm" class="search">
+        <input
+          id="cityInput"
+          type="text"
+          placeholder="Ej. Madrid, Barcelona, Valencia…"
+          autocomplete="off"
+          aria-label="Ciudad"
+        />
+        <button type="submit">Buscar</button>
+      </form>
+
+      <button id="geoBtn" class="secondary" type="button">Usar mi ubicación</button>
+    </section>
+
+    <section id="status" class="status" aria-live="polite"></section>
+
+    <section id="card" class="card hidden" aria-label="Resultado del clima">
+      <div class="card-top">
+        <div>
+          <h2 id="place">—</h2>
+          <p id="time" class="muted">—</p>
+        </div>
+        <div class="icon" id="icon" aria-hidden="true">—</div>
+      </div>
+
+      <div class="grid">
+        <div class="metric">
+          <div class="label">Temperatura</div>
+          <div class="value"><span id="temp">—</span>°C</div>
+        </div>
+        <div class="metric">
+          <div class="label">Sensación</div>
+          <div class="value"><span id="feels">—</span>°C</div>
+        </div>
+        <div class="metric">
+          <div class="label">Humedad</div>
+          <div class="value"><span id="humidity">—</span>%</div>
+        </div>
+        <div class="metric">
+          <div class="label">Viento</div>
+          <div class="value"><span id="wind">—</span> km/h</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="forecast" class="forecast hidden" aria-label="Pronóstico 7 días">
+         <h3>Pronóstico 7 días</h3>
+         <div id="forecastGrid" class="forecast-grid"></div>
+    </section>
+
+
+    <footer class="footer muted">
+      Datos: Open-Meteo (sin API key)
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
